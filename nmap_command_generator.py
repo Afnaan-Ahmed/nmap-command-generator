@@ -37,7 +37,7 @@ def main_menu():
     subprocess.run("clear")
     print(light_green + "         MENU            " + reset)
     print()
-    print(light_red + "[1] " +reset+ "- create payload")
+    print(light_red + "[1] " +reset+ "- create command")
     print(light_blue + "[2] " +reset+ "- see templates")
     print(light_red + "[3] " +reset+ "- exit")
     response = input("> ")
@@ -54,7 +54,7 @@ def main_menu():
 
 
 def create():
-    payload = "sudo nmap"
+    command = "sudo nmap"
     subprocess.run("clear")
     print(light_cyan +"Scan type:"+reset)
     print(f'''
@@ -80,7 +80,7 @@ def create():
         '7':'',
     }
     try:
-        payload += ' '+dictionary[response]
+        command += ' '+dictionary[response]
     except:
         print()
     
@@ -114,7 +114,7 @@ def create():
         '9':'',
     }
     try:
-        payload += ' '+dictionary[response]
+        command += ' '+dictionary[response]
     except:
         print()
     
@@ -138,7 +138,7 @@ def create():
         '4':'',
         }
     try:
-        payload += ' '+dictionary[response]
+        command += ' '+dictionary[response]
     except:
         print()
 
@@ -168,7 +168,7 @@ def create():
         '7':'',
         }
     try:
-        payload += ' '+dictionary[response]
+        command += ' '+dictionary[response]
     except:
         print()
     
@@ -195,13 +195,13 @@ def create():
         '5':'',
         }
     try:
-        payload += ' '+dictionary[response]
+        command += ' '+dictionary[response]
     except:
         print()
 
     
     print()          
-    print("Your payload is: "+light_green+ payload +" <IP address/range>" + reset)
+    print("Your command is: "+light_green+ command +" <IP address/range>" + reset)
     print("Replace <IP address/range>")
     print()
 
@@ -213,7 +213,7 @@ def create():
 
 
 def templates():
-    print("copy one of the below payloads and replace '<IP address/range>'")
+    print("copy one of the below commands and replace '<IP address/range>'")
     print("nmap <IP address/range>")
     print("nmap -p- -A <IP address/range>")
     print("nmap -sS -Pn -A <IP address/range>")
